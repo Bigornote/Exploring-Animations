@@ -16,8 +16,20 @@
  * "Si ça vit pour toute la session —> initBase()"
  */
 
-import { initSmoothScrolling } from "../scroll/smoothScroll";
+import { destroyAnimations, initAnimations } from "../animations/effects";
+import { destroySmoothParallaxScroll, initSmoothParallaxScroll } from "../animations/smoothParallaxScroll";
+import { destroySmoothScrolling, initSmoothScrolling } from "../scroll/smoothScroll";
 
 export function initBase() {
   initSmoothScrolling();
+
+  initAnimations();
+  initSmoothParallaxScroll();
+}
+
+export function clearBase() {
+  destroyAnimations();
+  destroySmoothParallaxScroll();
+
+  destroySmoothScrolling();
 }

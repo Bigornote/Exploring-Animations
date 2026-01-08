@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="main" data-name="smooth-parallax-scroll">
+    <section
+      class="w-full h-lvh flex items-center justify-center bg-neutral-800"
+    >
+      <p class="text-white">Smooth Parallax Scroll</p>
+    </section>
+    <section
+      class="gallery w-full h-lvh bg-neutral-100 overflow-hidden"
+      data-name="gallery"
+    >
+      <div class="grid grid-cols-12 gap-fluid-sm p-fluid-sm">
+        <div class="col-span-4 flex flex-col gap-fluid-sm" data-name="column">
+          <div class="boxe w-full h-[60vh] bg-neutral-200 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-400 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-600 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-800 rounded-fluid-sm bg-">
+          </div>
+        </div>
+
+        <div class="col-span-4 flex flex-col gap-fluid-sm" data-name="column">
+          <div class="boxe w-full h-[60vh] bg-neutral-800 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-200 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-400 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-600 rounded-fluid-sm">
+          </div>
+        </div>
+
+        <div class="col-span-4 flex flex-col gap-fluid-sm" data-name="column">
+          <div class="boxe w-full h-[60vh] bg-neutral-600 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-800 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-200 rounded-fluid-sm">
+          </div>
+          <div class="boxe w-full h-[60vh] bg-neutral-400 rounded-fluid-sm">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full h-lvh flex items-center justify-center bg-neutral-800"
+    >
+      <a class="text-white" href="/">Back Home</a>
+    </section>
+  </main>
+</BaseLayout>
