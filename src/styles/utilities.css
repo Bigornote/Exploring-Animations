@@ -1,0 +1,119 @@
+/* utilities.css — Effets atomiques que Tailwind ne fait pas */
+
+/* ASPECT RATIOS CUSTOM */
+@utility aspect-golden {
+  aspect-ratio: 1.618 / 1;
+}
+@utility aspect-golden-portrait {
+  aspect-ratio: 1 / 1.618;
+}
+
+/* SCROLL & SNAP */
+@utility snap-smooth {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+/* EFFETS VISUELS */
+@utility blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@utility overlay-dark{
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: 0;
+  }
+}
+
+@utility overlay-medium {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-medium);
+    z-index: 0;
+  }
+}
+
+@utility overlay-light {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-light);
+    z-index: 0;
+  }
+}
+
+/* IMAGES */
+@utility cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* SWUP TRANSITIONS */
+@utility transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+
+  :root.is-animating & {
+    opacity: 0;
+  }
+}
+
+/* TYPOGRAPHIE  */
+@utility text-title-2xl {
+  font-size: var(--text-heading-2xl);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+@utility text-title-xl {
+  font-size: var(--text-heading-xl);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+@utility text-title-lg {
+  font-size: var(--text-heading-lg);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility text-title-md {
+  font-size: var(--text-heading-md);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility text-title-sm {
+  font-size: var(--text-heading-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-xs {
+  font-size: var(--text-heading-xs);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}

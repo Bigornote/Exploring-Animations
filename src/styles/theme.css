@@ -1,0 +1,70 @@
+/* theme.css */
+
+@theme static {
+    --font-sans: "Nohemi", Helvetica, sans-serif;
+    --font-mono: "DM Mono", 'Courier New', monospace;
+
+    --text-base: utopia.clamp(13, 14);
+    --text-lg: utopia.clamp(15, 16);
+
+    --text-heading-xs: utopia.clamp(20, 28);
+    --text-heading-sm: utopia.clamp(22, 32);
+    --text-heading-md: utopia.clamp(24, 40);
+    --text-heading-lg: utopia.clamp(28, 45);
+    --text-heading-xl: utopia.clamp(36, 60);
+    --text-heading-2xl: utopia.clamp(42, 80);
+
+    --color-white: oklch(0.9702 0.0041 271.37);
+    --color-grey-light: oklch(0.8422 0.0116 269.53);
+    --color-grey-medium: oklch(0.6642 0.0197 272.19);
+    --color-grey-dark: oklch(0.4752 0.0184 269.76);
+    --color-charcoal: oklch(0.2931 0.0095 268.35);
+    --color-black: oklch(0.2136 0.0061 271.12);
+
+    --overlay-dark: oklch(0.2136 0.0061 271.12 / 0.8);
+    --overlay-medium: oklch(0.2136 0.0061 271.12 / 0.5);
+    --overlay-light: oklch(0.2136 0.0061 271.12 / 0.3);  
+
+    --spacing-fluid-3xs: utopia.clamp(4, 6);
+    --spacing-fluid-2xs: utopia.clamp(8, 10);
+    --spacing-fluid-xs: utopia.clamp(12, 14);
+    --spacing-fluid-sm: utopia.clamp(16, 20);
+    --spacing-fluid-md: utopia.clamp(24, 32);
+    --spacing-fluid-lg: utopia.clamp(32, 48);
+    --spacing-fluid-xl: utopia.clamp(48, 64);
+    --spacing-fluid-2xl: utopia.clamp(64, 96);
+    --spacing-fluid-3xl: utopia.clamp(96, 144);
+    --spacing-fluid-4xl: utopia.clamp(144, 192);
+
+    --radius-fluid-xs: utopia.clamp(2, 4);
+    --radius-fluid-sm: utopia.clamp(6, 8);
+    --radius-fluid-md: utopia.clamp(8, 10);
+    --radius-fluid-lg: utopia.clamp(10, 12);
+    --radius-fluid-xl: utopia.clamp(16, 20);
+
+    --breakpoint-mobile: 375px;
+    --breakpoint-mobile-lg: 540px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-laptop-lg: 1200px;
+    --breakpoint-desktop: 1440px;
+    --breakpoint-large: 1920px;
+
+    --transition-duration-fast: 0.2s;
+    --transition-duration: 0.4s;
+    --transition-duration-slow: 0.6s;
+    --transition-duration-slower: 0.8s;
+    --transition-duration-slowest: 1s;
+
+    --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-circ-out: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --ease-quart-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease: var(--ease-expo-out);
+
+    --z-index-modal: 200;
+    --z-index-header: 100;
+    --z-index: 0;
+    --z-index-above: 1;
+    --z-index-below: -1;
+}

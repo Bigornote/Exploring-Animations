@@ -1,0 +1,90 @@
+/* components.css — Éléments d'interface complets */
+
+/* LAYOUT */
+.container-fluid {
+    width: 100%;
+    padding-inline: var(--spacing-fluid-sm);
+}
+
+@media (min-width: 1024px) {
+    .container-fluid {
+        padding-inline: var(--spacing-fluid-xs);
+    }
+}
+
+/* LABEL */
+.label {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-charcoal);
+    padding: var(--spacing-fluid-3xs) var(--spacing-fluid-2xs);
+    background: var(--color-grey-light);
+    border-radius: var(--radius-fluid-sm);
+}
+
+/* LIST */
+.list ul {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding-left: var(--spacing-fluid-md);
+    margin-bottom: var(--spacing-fluid-xs);
+    font-size: var(--text-base);
+    line-height: 1.6;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-grey-dark);
+      border-radius: 50%;
+    }
+  }
+}
+
+/* CARD */
+.card {
+    padding: var(--spacing-fluid-md);
+    background: var(--color-white);
+    border-radius: var(--radius-fluid-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow var(--transition-duration) var(--ease);
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+}
+
+
+/* BUTTONS */
+.btn {
+  position: relative;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+
+  &.primary {
+    padding-left: var(--spacing-fluid-3xs);
+
+    span.bg {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      text-indent: -200vw;
+      background-color: inherit;
+      overflow: hidden;
+      z-index: -1;
+    }
+  }
+}

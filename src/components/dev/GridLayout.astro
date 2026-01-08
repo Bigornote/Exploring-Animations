@@ -1,0 +1,84 @@
+---
+const {
+  desktopCols = 12,
+  laptopCols = 4,
+  gap = 'var(--spacing-fluid-sm)',
+  desktopMargins = 'var(--spacing-fluid-sm)',
+  laptopMargins = 'var(--spacing-fluid-xs)',
+  color = 'rgba(189, 195, 255, 1)',
+  opacity = 0.2
+} = Astro.props;
+---
+
+{import.meta.env.DEV && (
+  <div 
+  id="grid-layout" 
+  class="container-fluid fixed inset-0 h-dvh z-9999 pointer-events-none grid
+    px-(--grid-margins-desktop)
+    lg:px-(--grid-margins-laptop)
+  "
+  style={`
+    display: none;
+    --grid-gap: ${gap}; 
+    --grid-margins-desktop: ${desktopMargins}; 
+    --grid-margins-laptop: ${laptopMargins}; 
+    --grid-color: ${color}; 
+    --grid-opacity: ${opacity};
+    --desktop-cols: ${desktopCols};
+    --laptop-cols: ${laptopCols};
+    grid-template-columns: repeat(var(--desktop-cols), 1fr);
+    gap: var(--grid-gap);
+  `}
+  data-desktop-cols={desktopCols}
+  data-laptop-cols={laptopCols}
+>
+</div>
+
+
+  <script>
+    let isVisible = false;
+
+    function updateGridColumns() {
+      const grid = document.getElementById('grid-layout');
+      if (!grid) return;
+
+      const desktopCols = parseInt(grid.dataset.desktopCols || '12');
+      const laptopCols = parseInt(grid.dataset.laptopCols || '4');
+      const isLaptop = window.matchMedia('(max-width: 1024px)').matches;
+      const colCount = isLaptop ? laptopCols : desktopCols;
+
+      const computedStyle = getComputedStyle(grid);
+      const bgColor = computedStyle.getPropertyValue('--grid-color').trim();
+      const opacityValue = computedStyle.getPropertyValue('--grid-opacity').trim();
+
+      // Update grid template columns
+      grid.style.gridTemplateColumns = `repeat(${colCount}, 1fr)`;
+
+      // Clear and recreate columns
+      grid.innerHTML = '';
+      for (let i = 0; i < colCount; i++) {
+        const col = document.createElement('div');
+        col.className = 'h-full';
+        col.style.backgroundColor = bgColor;
+        col.style.opacity = opacityValue;
+        grid.appendChild(col);
+      }
+    }
+
+    function toggleGrid(e: KeyboardEvent) {
+      if (e.shiftKey && e.key.toLowerCase() === 'g') {
+        e.preventDefault();
+        isVisible = !isVisible;
+        const grid = document.getElementById('grid-layout');
+        if (grid) {
+          grid.style.display = isVisible ? 'grid' : 'none';
+          if (isVisible) updateGridColumns();
+        }
+      }
+    }
+
+    updateGridColumns();
+    window.addEventListener('resize', updateGridColumns);
+    document.addEventListener('keydown', toggleGrid);
+  </script>
+)}

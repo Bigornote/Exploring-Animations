@@ -1,0 +1,50 @@
+---
+import { SEO } from "astro-seo";
+import Header from "../components/Header.astro";
+import GridLayout from "../components/dev/GridLayout.astro";
+import "../styles/main.css";
+
+const {
+  favicon,
+  title = "Animations GSAP",
+  description = "Exploring animations GSAP to grind",
+  image,
+  canonical,
+} = Astro.props;
+
+const site = "https://no-site.com";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical || site + Astro.url.pathname}
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+          image: image || "",
+          url: site + Astro.url.pathname,
+        },
+        optional: {
+          description,
+        },
+      }}
+    />
+  </head>
+  <body>
+    <div id="swup">
+      <Header />
+      <slot />
+    </div>
+    <GridLayout />
+    <script src="/src/scripts/main.js"></script>
+  </body>
+</html>

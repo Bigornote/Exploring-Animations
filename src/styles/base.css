@@ -1,0 +1,71 @@
+/* base.css */
+
+@layer base {
+
+/* ENHANCEMENTS — Ce que Preflight ne fait pas */
+  *,
+  *::after,
+  *::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    text-shadow: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-charcoal);
+    outline-offset: 2px;
+    border-radius: var(--radius-fluid-xs);
+  }
+
+/* SCROLLBAR — Custom minimal */
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-black);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+  }
+
+/* HTML & BODY */
+  html {
+    font-family: var(--font-mono);
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-size: var(--text-base);
+    color: var(--color-black);
+    background: var(--color-white);
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+    overflow-x: clip;
+  }
+
+/* ELEMENTS */
+  figure {
+    display: block;
+    line-height: 0;
+  }
+
+  img,
+  video {
+    display: block;
+  }
+
+  img:not([src]),
+  video:not([src]) {
+    visibility: hidden;
+  }
+}
