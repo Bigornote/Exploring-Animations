@@ -1,3 +1,4 @@
+// smoothParallaxScroll
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -25,15 +26,11 @@ export const initSmoothParallaxScroll = () => {
       const config = configs[index];
       if (!config) return;
 
-      // Position initiale centrée
-      // gsap.set(el, { yPercent: config.from });
-
       gsap.fromTo(el,
         { yPercent: config.from },
         {
           yPercent: config.to,
           scrollTrigger: {
-            id: 'smooth-parallax',
             trigger: gallery,
             start: 'top 80%',
             end: 'bottom 20%',
@@ -45,9 +42,3 @@ export const initSmoothParallaxScroll = () => {
   }
   
 }
-
-export const destroySmoothParallaxScroll = () => {
-  ScrollTrigger.getAll()
-    .filter(t => t.vars.id === 'smooth-parallax')
-    .forEach(t => t.kill());
-};

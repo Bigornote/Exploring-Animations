@@ -17,7 +17,7 @@
  */
 
 import { destroyAnimations, initAnimations } from "../animations/effects";
-import { destroySmoothParallaxScroll, initSmoothParallaxScroll } from "../animations/smoothParallaxScroll";
+import { initSmoothParallaxScroll } from "../animations/smoothParallaxScroll";
 import { destroySmoothScrolling, initSmoothScrolling } from "../scroll/smoothScroll";
 
 export function initBase() {
@@ -29,7 +29,6 @@ export function initBase() {
 
 export function clearBase() {
   destroyAnimations();
-  destroySmoothParallaxScroll();
 
   destroySmoothScrolling();
 }
