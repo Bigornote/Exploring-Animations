@@ -12,9 +12,6 @@ export const initSmoothParallaxScroll = () => {
   const gallery = component.querySelector('[data-name="gallery"]');
   const columns = gsap.utils.toArray('[data-name="column"]')
 
-  console.log(gallery);
-  
-
   if(columns.length > 0 ) {
     const configs = [
       { from: 0, to: -50 },   // colonne 0 : monte

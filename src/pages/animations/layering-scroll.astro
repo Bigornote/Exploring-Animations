@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="main">
+    <section
+      data-layered
+      data-speed="0.2"
+      class="relative w-full h-lvh bg-neutral-300"
+    >
+      <div class="grid grid-cols-12 gap-x-17 mt-40 p-fluid-lg">
+        <div class="col-span-4 h3">
+          Invest in yourself and your web design career
+        </div>
+        <div class="col-start-7 col-span-6 flex flex-col gap-y-20">
+          <div class="h3 grid grid-cols-6 gap-x-7">
+            <div class="col-span-2">(A)</div>
+            <div class="col-span-4">
+              <p class="max-w-40rem">
+                Typography makes or breaks a design. Master it.
+              </p>
+            </div>
+          </div>
+          <div class="h3 grid grid-cols-6 gap-x-17">
+            <div class="col-span-2">(B)</div>
+            <div class="col-span-4">
+              <p class="max-w-40rem">
+                Become confident in making design decisions and never doubt
+                yourself again.
+              </p>
+            </div>
+          </div>
+          <div class="h3 grid grid-cols-6 gap-x-17">
+            <div class="col-span-2">(C)</div>
+            <div class="col-span-4">
+              <p class="max-w-40rem">
+                Learn a new design style and become an art director level
+                designer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        data-overlay="overlay-section"
+        class="absolute inset-0 z-above bg-neutral-800 opacity-0 will-change-opacity pointer-events-none"
+      >
+      </div>
+    </section>
+
+    <section
+      data-layered
+      data-speed="0.8"
+      class="relative w-full min-h-lvh flex items-center justify-center bg-neutral-100"
+    >
+      <a href="/">Back Home</a>
+    </section>
+  </main>
+</BaseLayout>

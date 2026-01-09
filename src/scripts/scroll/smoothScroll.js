@@ -13,7 +13,7 @@ function raf(time) {
 export const initSmoothScrolling = () => {
   if (lenis) return; 
   lenis = new Lenis({
-    lerp: 0.066,         // 0.1 = plus fluide/lent, 0.15 = ton défaut, 0.2 = plus réactif
+    lerp: 0.15,         // 0.1 = plus fluide/lent, 0.15 = ton défaut, 0.2 = plus réactif
     smoothWheel: true,   // smooth sur molette (défaut: true)
     wheelMultiplier: 1,  // sensibilité molette (0.5 = plus lent, 2 = plus rapide)
     touchMultiplier: 2,  // sensibilité touch (souvent augmenté)

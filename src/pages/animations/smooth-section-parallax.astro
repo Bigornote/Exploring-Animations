@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="main">
+    <section
+      data-name="smooth-section-parallax"
+      class="relative w-full h-lvh overflow-hidden"
+      style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"
+    >
+      <div
+        data-parallax-inner
+        class="fixed top-[-10vh] left-0 h-[120vh] w-full flex items-center justify-center bg-neutral-300 will-change-transform"
+      >
+        <p class="text-white">Smooth Section Parallax</p>
+      </div>
+
+      <div
+        data-overlay="overlay-section"
+        class="absolute inset-0 z-above bg-neutral-800 opacity-0 will-change-opacity pointer-events-none"
+      >
+      </div>
+    </section>
+
+    <section
+      class="relative w-full h-lvh flex items-center justify-center bg-neutral-100 overflow-hidden"
+    >
+      <a href="/">Back Home</a>
+    </section>
+  </main>
+</BaseLayout>
