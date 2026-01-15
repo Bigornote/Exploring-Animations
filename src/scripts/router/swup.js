@@ -21,6 +21,7 @@ import Swup from "swup";
 
 import { clearBase, initBase } from "../init/initBase";
 import { initPage } from "../init/initPage";
+import { initIntro } from "../three/intro";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initBase();
   initPage();
+  initIntro()
 
   // let firstVisit = !sessionStorage.getItem("transition-done");
 
